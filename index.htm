@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Voting | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    h1,
+    p,
+    .btn {
+      animation: fadeInUp 1s ease-in-out both;
+    }
+
+    h1 {
+      animation-delay: 0.3s;
+    }
+
+    p {
+      animation-delay: 0.5s;
+    }
+
+    .btn {
+      animation-delay: 0.7s;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .content-box {
+      background: url('https://www.shutterstock.com/image-photo/electronic-internet-voting-concept-evoting-600nw-2232562143.jpg') no-repeat center center/cover;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      color: black;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    footer {
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .img-fluid {
+      max-height: 350px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.htm">Online Voting</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.htm">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.htm">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.htm">User Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.htm">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin-login.htm">Admin Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container text-center mt-5">
+    <div class="content-box">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img
+            src="https://media.istockphoto.com/id/1258633187/vector/online-vote.jpg?s=612x612&w=0&k=20&c=7eOLMUx6_EKkXPjMrElvFYkz2x0rdShD8DNAlrff6-E="
+            class="img-fluid rounded shadow" alt="Voting Illustration">
+        </div>
+
+        <div class="col-md-6 text-start">
+          <h1 class="mb-3">Welcome to Online Voting System</h1>
+          <p class="lead">
+            A secure and paperless way to vote in elections.<br><br>
+            This platform is designed for schools, colleges, clubs, and communities looking to digitize their voting
+            process.
+            Eliminate manual errors, long queues, and paper waste. All you need is an internet connection and a few
+            clicks.
+            Imagine elections without long queues, piles of paper ballots, or counting mistakes. With our online voting
+            platform, schools, colleges, clubs, and communities can conduct elections in a smarter, greener, and more
+            transparent way.
+          </p>
+          <p><b>Simple to Use –</b> No technical skills required. Just log in, cast your vote, and you’re done in seconds.</p>
+          <p><b>Safe & Secure –</b> Every vote is encrypted, ensuring privacy and fairness.</p>
+            <p><b>Eco-Friendly –</b> Say goodbye to paper waste and do your part for the environment.</p> 
+            <p><b>Instant Results –</b> Forget waiting hours for manual counting. Get accurate results instantly.</p>
+           <p> <b>Accessible Anywhere –</b> Whether you’re at home, on campus, or traveling, all you need is an internet
+            connection.</p>
+          <a href="register.htm" class="btn btn-primary btn-lg mt-3">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center p-3 mt-5">
+    <p>© 2025 Online Voting System. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

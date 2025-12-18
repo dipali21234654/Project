@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>User Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://media.istockphoto.com/id/1410535683/photo/the-concept-of-electronic-voting-in-elections-voice-of-the-people-means-the-opinion-of-the.jpg?s=612x612&w=0&k=20&c=eS7PYuVsF5TV0GTT3EF0BTRLgJKe-phePeFxht6_fes=') no-repeat center center/cover;
+      min-height: 100vh;
+      position: relative;
+      color: #fff;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.65);
+      z-index: -1;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.95);
+      color: #000;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #statusMessage {
+      margin-top: 15px;
+      font-weight: 500;
+    }
+    /* #logoutBtn {
+      margin-top: 20px;
+      display: none;
+    } */
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.htm">Online Voting</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.htm">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.htm">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.htm">User Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.htm">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin-login.htm">Admin Login</a></li>
+          <li class="nav-item" id="logoutNavItem" style="display: none;">
+            <a class="nav-link" href="#" id="logoutNavLink">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="login-box col-md-6 col-lg-4">
+      <h3 class="mb-4 text-center">User Login</h3>
+      <form id="loginForm">
+        <input type="email" id="email" class="form-control mb-3" placeholder="Email" required>
+        <input type="password" id="password" class="form-control mb-3" placeholder="Password" required>
+        <button class="btn btn-primary w-100" type="submit">Login</button>
+      </form>
+      <p id="statusMessage" class="text-info"></p>
+      <!-- <button id="logoutBtn" class="btn btn-danger w-100">Logout</button> -->
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center p-3 mt-5">
+    <p>© 2025 Online Voting System. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    //const logoutBtn = document.getElementById("logoutBtn");
+    //const logoutNavItem = document.getElementById("logoutNavItem");
+    //const logoutNavLink = document.getElementById("logoutNavLink");
+
+    if (localStorage.getItem("isLoggedIn") === "true") {
+      if (loginForm) loginForm.style.display = window.location.href = "voting.htm";
+    //   // if (logoutBtn) logoutBtn.style.display = "block";
+    //   if (logoutNavItem) logoutNavItem.style.display = "block";
+    }
+
+    if (loginForm) {
+      loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        if (email && password) {
+          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("userEmail", email);
+          window.location.href = "voting.htm";
+        } else {
+          alert("Please enter both email and password.");
+        }
+      });
+    }
+
+    // if (logoutBtn) {
+    //   logoutBtn.addEventListener("click", function () {
+    //     localStorage.clear();
+    //     alert("Logged out successfully!");
+    //     window.location.href = "login.htm";
+    //   });
+    // }
+
+    // if (logoutNavLink) {
+    //   logoutNavLink.addEventListener("click", function (e) {
+    //     e.preventDefault();
+    //     localStorage.clear();
+    //     alert("Logged out successfully!");
+    //     window.location.href = "login.htm";
+    //   });
+    // }
+  </script>
+</body>
+
+</html>

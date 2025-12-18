@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Voting Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://www.shutterstock.com/image-illustration/3d-hand-putting-voting-envelope-260nw-2354292683.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      position: relative;
+      color: #fff;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .voting-box {
+      background: rgba(255, 255, 255, 0.95);
+      color: #000;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      position: relative;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Online Voting</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.htm">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="logoutUser()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="voting-box col-md-6 col-lg-5">
+      <h2 class="text-center mb-4">Cast Your Vote</h2>
+      <form id="voteForm">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="candidate" id="candidate1" value="Candidate 1" required>
+          <label class="form-check-label" for="candidate1">Candidate 1</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="candidate" id="candidate2" value="Candidate 2">
+          <label class="form-check-label" for="candidate2">Candidate 2</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="candidate" id="candidate3" value="Candidate 3">
+          <label class="form-check-label" for="candidate3">Candidate 3</label>
+        </div>
+        <button type="submit" class="btn btn-success w-100 mt-4">Submit Vote</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center p-3 mt-5">
+    <p>© 2025 Online Voting System</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("voteForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const selected = document.querySelector('input[name="candidate"]:checked');
+      if (selected) {
+        alert("You voted for " + selected.value);
+        window.location.href = "confirmation.htm";
+      } else {
+        alert("Please select a candidate to vote.");
+      }
+    });
+
+    function logoutUser() {
+      localStorage.clear();
+      alert("Logged out successfully!");
+      window.location.href = "login.htm";
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>About Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      position: relative;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+
+    .navbar {
+      z-index: 1000;
+    }
+
+    .content-box {
+      background: url('https://erepublic.brightspotcdn.com/dims4/default/45c77c9/2147483647/strip/true/crop/1020x532+0+48/resize/840x438!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fc0%2F81%2F5212633b7dfe4e4d7d6a657031fe%2Fshutterstock-1648710190.jpg') no-repeat center center/cover;
+      color: #000;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1s ease-in-out both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    ul li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .about-img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      object-fit: cover;
+      max-height: 300px;
+    }
+
+    .feature-img {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      object-fit: cover;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-title {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.htm">Online Voting</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.htm">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.htm">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.htm">User Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.htm">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin-login.htm">Admin Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="content-box">
+      <div class="row align-items-center mb-4">
+        <div class="col-md-6">
+          <img src="https://static.scientificamerican.com/sciam/cache/file/CF393A78-1DF6-4D70-BF862AC7CA0ACC02_source.jpg" alt="Digital Voting" class="about-img">
+        </div>
+        <div class="col-md-6">
+          <h2 class="section-title mb-3">About This Project</h2>
+          <p>
+            This Online Voting System was developed with a simple yet powerful goal — to bring a modern, fair, and digital approach to the way we vote. Traditional voting methods often come with long queues, manual errors, paper wastage, and even the risk of fraud. We wanted to change that.
+          </p>
+          <p>
+            With this system, elections become easier to organize, more secure, and a lot more transparent. Voters can register, log in, and cast their vote from the comfort of their home or anywhere with internet access. No need to print ballots, set up physical booths, or manually count votes.
+          </p>
+        </div>
+      </div>
+
+      <div class="row text-center mb-4">
+        <div class="col-md-4">
+          <img src="data:image/png;base64,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" alt="Security" class="feature-img">
+          <p><strong>🛡️ Secure:</strong> Only eligible users can vote, and only once.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="https://as1.ftcdn.net/jpg/05/67/84/26/1000_F_567842639_xkhcTPIZRdovdAUxtv9TRf0vEdB7ue7R.jpg" alt="Speed" class="feature-img">
+          <p><strong>⏱️ Instant Results:</strong> Get results in real time, no delays.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="https://pics.craiyon.com/2023-08-04/03b218c6367242f5ad7c41656defb031.webp" alt="Accessible" class="feature-img">
+          <p><strong>📱 Accessible:</strong> Mobile & desktop-friendly for all users.</p>
+        </div>
+      </div>
+
+      <p class="text-center">
+        More than just a tool, this project aims to build trust in the election process, especially in schools, colleges, clubs, and communities where leadership and decisions truly shape the environment. It's a small step towards making voting more inclusive, efficient, and future-ready.
+      </p>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center p-3 mt-5">
+    <p>© 2025 Online Voting System. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
